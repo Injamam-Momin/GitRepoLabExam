@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Search {
 
     public static int LSearch(int arr[], int searchElement) {
@@ -24,10 +26,18 @@ public class Search {
     }
 
     public static void main(String args[]) {
-        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        int searchElement = 9;
-        int index = Search.LSearch(arr, searchElement);
-        // index = Search.BSearch(arr, searchElement, 0, arr.length - 1);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of array elements");
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        for (int i = 0; i < size; ++i) {
+            System.out.print("Enter element no. " + (i+1) +  " : ");
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Enter element to be searched ");
+        int searchElement = sc.nextInt();
+        // int index = Search.LSearch(arr, searchElement
+        int index = Search.BSearch(arr, searchElement, 0, arr.length - 1);
         if (index == -1) {
             System.out.println("Element " + searchElement + " Not found..!");
         } else {
